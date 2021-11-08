@@ -40,7 +40,8 @@ public class HelloServiceAspect {
         System.out.println("A Something else before!!!");
         Object result = null;
         try {
-            result = joinPoint.proceed();
+            result = joinPoint.proceed(new Object[]{"Bill"});
+            //result = joinPoint.proceed();
             System.out.println("B Something else after!!!");
         } catch (Throwable e) {
             e.printStackTrace();
